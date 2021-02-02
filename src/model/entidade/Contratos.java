@@ -44,12 +44,16 @@ public class Contratos {
 		this.valorTotal = valorTotal;
 	}
 
-	public List<Prestacao> getParcelas() {
-		return parcelas;
-	}
-
 	public void setParcelas(Prestacao parcela) {
 		this.parcelas.add(parcela);
 	}
-		
+	
+	@Override
+	public String toString() {
+		String texto = "";
+		for (Prestacao cd : parcelas) {
+			texto += cd.toString() + String.format("%n");
+		}
+		return texto;
+	}
 }

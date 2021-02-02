@@ -1,11 +1,13 @@
 package model.entidade;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Prestacao {
 
 	private Date dataVencimento;
 	private Double valorParcela;
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
 	public Prestacao() {
 	}
@@ -31,5 +33,9 @@ public class Prestacao {
 		this.valorParcela = valorParcela;
 	}
 	
+	@Override
+	public String toString() {
+		return sdf.format(this.dataVencimento) + " - " + this.valorParcela;
+	}
 	
 }
